@@ -42,8 +42,7 @@ class DishDetail extends Component{
                         <li>
                             {cm.comment}
                         </li>
-                        <li>
-                            -- {cm.author}, { }
+                        <li>-- {cm.author}, { }
                             {
                                 new Intl.DateTimeFormat('en-US', {
                                     month: 'short', day: '2-digit', year: 'numeric' 
@@ -71,14 +70,16 @@ class DishDetail extends Component{
 
 
     render(){
-        const selected = this.props.selectedDish
+        const selected = this.props.dish
         return(
+            <div className="container">
                 <div className="row">
                     <div className="col-12 col-md-5 m1">
                     {this.renderDish(selected)}
                     </div>
                     <div className="col-12 col-md-5 m1">{this.renderComments(selected)}</div>
                 </div>
+            </div>
                 
         )
     }
